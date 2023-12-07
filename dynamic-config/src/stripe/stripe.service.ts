@@ -16,7 +16,7 @@ export class StripeService {
     return products.data;
   }
 
-  async getCustomers() {
+  async getCustomers(): Promise<Stripe.Customer[]> {
     const customers = await this.stripe.customers.list({});
     return customers.data;
   }
